@@ -3,11 +3,9 @@ import os
 import struct
 from typing import Tuple
 from Crypto.Cipher import AES
-
 # ==================================================
 # Cấu hình hệ thống
 # ==================================================
-
 BLOCK_SIZE = 16
 LENGTH_HEADER_SIZE = 4
 KEY_LENGTH_HEADER_SIZE = 4
