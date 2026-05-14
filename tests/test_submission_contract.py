@@ -46,7 +46,6 @@ def test_readme_info_filled():
     """Kiểm tra xem nhóm đã điền thông tin vào README.md chưa."""
     readme_path = REPO_ROOT / "README.md"
     assert readme_path.exists(), "Không tìm thấy file README.md"
-        
     readme = readme_path.read_text(encoding="utf-8")
     
     # Kiểm tra các thông số cấu hình bắt buộc
