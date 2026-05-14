@@ -1,5 +1,4 @@
 from aes_socket_utils import decrypt_aes_cbc, encrypt_aes_cbc
-
 def test_wrong_key_should_not_recover_original_plaintext():
     """Kiểm tra xem khi dùng sai khóa thì không thể khôi phục bản tin gốc."""
     # 1. Chuẩn bị dữ liệu mẫu
