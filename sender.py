@@ -8,7 +8,6 @@ from pathlib import Path
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 from aes_socket_utils import build_data_packet, build_key_packet, encrypt_aes_cbc
-
 SERVER_IP = os.getenv("SERVER_IP", "127.0.0.1")
 DATA_PORT = int(os.getenv("DATA_PORT", "6000"))
 KEY_PORT = int(os.getenv("KEY_PORT", "6001"))
@@ -38,7 +37,7 @@ def send_packet(host: str, port: int, packet: bytes):
         except ConnectionRefusedError:
             if i == max_retries - 1:
                 raise
-            time.sleep(0.5) # Đợi receiver mở port
+            time.sleep(0.5) 
 
 def main() -> None:
     plaintext = get_plaintext()
