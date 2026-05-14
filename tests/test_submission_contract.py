@@ -5,7 +5,6 @@ from pathlib import Path
 # Đảm bảo đường dẫn dẫn đến thư mục gốc của repository
 # Nếu file test nằm trong thư mục /tests, dùng parents[1] là chuẩn
 REPO_ROOT = Path(__file__).resolve().parents[1]
-
 def test_required_files_exist():
     """Kiểm tra sự tồn tại của tất cả các file bắt buộc theo yêu cầu của Lab 6."""
     required = [
@@ -31,7 +30,6 @@ def test_code_uses_aes_not_des():
         file_path = REPO_ROOT / path
         if file_path.exists():
             code_contents.append(file_path.read_text(encoding="utf-8"))
-    
     if not code_contents:
         return 
 
@@ -53,7 +51,6 @@ def test_readme_info_filled():
     assert "DATA_PORT" in readme, "README thiếu thông tin cấu hình DATA_PORT (6000)."
     
     # Kiểm tra tên thành viên để đảm bảo tính cá nhân hóa bài Lab
-    # Ông nhớ vào README.md điền tên mình và bạn cùng nhóm vào nhé!
     assert "Thành viên" in readme or "Quân" in readme, "Hãy điền tên các thành viên vào README.md."
 
 def test_requirements_file_valid():
