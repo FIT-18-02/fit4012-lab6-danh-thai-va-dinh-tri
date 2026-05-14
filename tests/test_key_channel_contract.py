@@ -12,7 +12,6 @@ def test_key_channel_contract_128bit():
     key = b"k" * 16
     iv = b"i" * 16
     packet = build_key_packet(key, iv)
-    
     # Kiểm tra header độ dài key (4 bytes đầu tiên)
     # 16 bytes = \x00\x00\x00\x10 trong Big-endian
     assert packet[:4] == (16).to_bytes(4, "big")
@@ -46,7 +45,6 @@ def test_corrupted_key_packet_should_fail():
     key = b"k" * 16
     iv = b"i" * 16
     packet = build_key_packet(key, iv)
-    
     # Cắt bớt gói tin để làm hỏng cấu trúc
     corrupted_packet = packet[:-5] 
     with pytest.raises(ValueError):
