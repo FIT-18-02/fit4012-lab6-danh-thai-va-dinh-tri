@@ -21,7 +21,7 @@ def test_wrong_key_should_not_recover_original_plaintext():
         
     except ValueError:
         # Trong mã hóa CBC, dùng sai khóa rất dễ dẫn đến sai lệch Padding PKCS#7
-        # Nếu hàm decrypt ném lỗi ValueError (Padding error), coi như test đạt yêu cầu
+        
         assert True
     except Exception as e:
         # Nếu có lỗi khác phát sinh thì fail test
