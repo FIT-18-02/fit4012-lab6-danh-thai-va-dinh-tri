@@ -1,10 +1,8 @@
 import sys
 import os
 import pytest
-
 # Đảm bảo import được aes_socket_utils từ thư mục gốc
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 from aes_socket_utils import decrypt_aes_cbc, encrypt_aes_cbc
 
 def test_tampered_ciphertext_should_fail_padding():
@@ -17,9 +15,7 @@ def test_tampered_ciphertext_should_fail_padding():
     # Thực hiện Tamper: Đảo 1 bit cuối cùng của bản mã
     tampered = bytearray(cipher_bytes)
     tampered[-1] ^= 0x01
-
     # Trong AES-CBC, thay đổi byte cuối thường làm hỏng cấu trúc PKCS#7 Padding
-    # Match với thông báo lỗi trong aes_socket_utils.py của ông
     with pytest.raises(ValueError, match="Padding"):
         decrypt_aes_cbc(key, iv, bytes(tampered))
 
