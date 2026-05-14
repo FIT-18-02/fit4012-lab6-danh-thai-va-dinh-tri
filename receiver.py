@@ -20,7 +20,6 @@ TIMEOUT = float(os.getenv("SOCKET_TIMEOUT", "10"))
 def run_receiver():
     # Giữ đúng từ khóa "đang" để file test nhận diện receiver đã sẵn sàng
     print(f"--- [RECEIVER] Đang lắng nghe tại {RECEIVER_HOST} ---")
-
     key_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     data_server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
