@@ -57,6 +57,5 @@ def test_invalid_ciphertext_length_fail():
     key = b"k" * 16
     iv = b"i" * 16
     invalid_cipher = b"abc" # Không chia hết cho 16
-    
     with pytest.raises(ValueError, match="Sai block"):
         decrypt_aes_cbc(key, iv, invalid_cipher)
