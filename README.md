@@ -26,8 +26,8 @@ Lab này kế thừa ý tưởng từ Lab 3 DES Socket, nhưng nâng cấp theo 
 - **Phần làm chung**: Thiết kế kịch bản kiểm thử (tests), viết báo cáo và phân tích mô hình đe dọa.
 
 ## Demo roles
-- **Demo Sender / kênh khóa / log gửi**: Phạm Anh Quân
-- **Demo Receiver / kênh dữ liệu / giải mã**: Ngô Văn Hiếu
+- **Demo Sender / kênh khóa / log gửi**: Nguyễn Đình Trí
+- **Demo Receiver / kênh dữ liệu / giải mã**: Phạm Danh Thái
 - **Cả hai cùng trả lời threat model và ethics**: Cả nhóm cùng thực hiện
 
 ---
