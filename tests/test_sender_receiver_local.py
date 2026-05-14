@@ -98,7 +98,6 @@ def test_local_sender_receiver_roundtrip():
         assert "[+] Bản tin gốc:" in receiver_out
         assert test_message in receiver_out
         print("\n[OK] Test Roundtrip thành công! Tin nhắn đã đi từ Sender qua Receiver an toàn.")
-
     finally:
         # Đảm bảo tắt hẳn Receiver sau khi test xong hoặc nếu test fail
         if receiver.poll() is None:
