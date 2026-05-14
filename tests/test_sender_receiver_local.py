@@ -19,13 +19,16 @@ def wait_for_output(process, text: str, timeout: float = 5.0) -> str:
     collected = []
     start = time.time()
     while time.time() - start < timeout:
+        
         # Đọc từng dòng từ stdout của process đang chạy ngầm
         line = process.stdout.readline()
         if line:
             collected.append(line)
+            
             # Kiểm tra xem từ khóa (ví dụ: 'đang') có trong dòng log không
             if text.lower() in line.lower():
                 return "".join(collected)
+                
         time.sleep(0.1) # Tránh chiếm dụng CPU quá mức
     raise AssertionError(f"Không thấy output '{text}' từ Receiver. Output nhận được:\n{''.join(collected)}")
 
@@ -36,7 +39,6 @@ def test_local_sender_receiver_roundtrip():
     """
     data_port = find_free_port()
     key_port = find_free_port()
-
     # 1. Thiết lập môi trường cho Receiver
     receiver_env = os.environ.copy()
     receiver_env.update({
@@ -47,7 +49,6 @@ def test_local_sender_receiver_roundtrip():
         "SOCKET_TIMEOUT": "5",
         "OUTPUT_FILE": "test_output.txt"
     })
-
     # 2. Thiết lập môi trường cho Sender
     test_message = "Xin chao FIT4012 - local AES integration test"
     sender_env = os.environ.copy() #hieuquan
