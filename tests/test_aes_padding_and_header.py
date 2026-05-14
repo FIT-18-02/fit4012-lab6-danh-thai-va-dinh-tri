@@ -14,7 +14,6 @@ from aes_socket_utils import (
     pad,
     unpad,
 )
-
 def test_pad_unpad_roundtrip():
     """Kiểm tra logic thêm và xóa padding cho nhiều độ dài khác nhau."""
     test_cases = [
@@ -25,10 +24,10 @@ def test_pad_unpad_roundtrip():
     ]
     for data in test_cases:
         assert unpad(pad(data)) == data
-
 def test_invalid_padding_raises_error():
     """Kiểm tra xem unpad có bắt được lỗi khi padding bị hỏng không."""
     bad_data = b"Some data" + b"\x05\x05" # Sai giá trị padding
+    
     with pytest.raises(ValueError):
         unpad(bad_data)
 
