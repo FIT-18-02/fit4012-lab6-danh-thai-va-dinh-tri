@@ -36,3 +36,4 @@ Các biện pháp nhằm giảm thiểu rủi ro cho hệ thống:
 ## Residual risks
 
 Rủi ro còn lại lớn nhất là hệ thống vẫn chưa an toàn tuyệt đối vì Kênh Khóa (Key channel) trong bài Lab này chỉ mang tính chất mô phỏng học tập. Hệ thống hiện vẫn thiếu cơ chế xác thực Sender/Receiver và chưa có lớp bảo vệ chống tấn công phát lại (Replay attack) một cách đầy đủ.
+#thaiandtri
