@@ -2,11 +2,10 @@
 
 ## Thông tin nhóm
 
-- Thành viên 1: Phạm Danh Thái - MSSV: 1871020
+- Thành viên 1: Phạm Danh Thái - MSSV: 1871020523
 - Thành viên 2: Nguyễn Đình Trí - MSSV: 1871020580
 
 ## Assets
-//qh
 Các tài sản quan trọng cần bảo vệ bao gồm:
 - **Bản rõ (Plaintext)**: Nội dung thông tin gốc chứa trong file `sample_input.txt` hoặc biến môi trường.
 - **Khóa AES (Key) & IV**: Thành phần then chốt để thực hiện mã hóa và giải mã AES-128.
@@ -14,7 +13,6 @@ Các tài sản quan trọng cần bảo vệ bao gồm:
 - **Dữ liệu Log**: Các file ghi chép tiến trình hoạt động của hệ thống trong thư mục `logs/`.
 
 ## Attacker model
-//qh
 Đối tượng tấn công giả định trong bài Lab này là:
 - Kẻ tấn công có khả năng nghe lén (Eavesdropping) trên mạng nội bộ (LAN) để bắt các gói tin TCP.
 - Có khả năng can thiệp, sửa đổi (Tampering) gói tin bản mã trên đường truyền.
@@ -29,7 +27,6 @@ Hệ thống hiện tại đối mặt với các mối đe dọa cụ thể sau
 - **Lộ thông tin qua Log (Log leakage)**: Nếu các hàm hiển thị ghi trực tiếp giá trị Key/IV vào log file mà không được bảo vệ, kẻ tấn công có thể lấy được khóa từ lịch sử hệ thống.
 
 ## Mitigations
-//quanhieu
 Các biện pháp nhằm giảm thiểu rủi ro cho hệ thống:
 - **Mã hóa kênh truyền**: Trong thực tế, cần sử dụng giao thức TLS/SSL để mã hóa toàn bộ luồng dữ liệu socket.
 - **Trao đổi khóa an toàn**: Thay vì gửi Key/IV trực tiếp, cần sử dụng RSA (mã hóa bất đối xứng) hoặc Diffie-Hellman để trao đổi khóa an toàn.
